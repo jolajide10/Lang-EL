@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Speak & Learn</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="card">
+    <h1>Speak &amp; Learn</h1>
+    <p class="subtitle">Say it in English. Hear it in another language.</p>
+
+    <label class="lang-row" for="lang-select">
+      Translate to:
+      <select id="lang-select"></select>
+    </label>
+
+    <div class="input-row">
+      <input
+        id="phrase-input"
+        type="text"
+        placeholder="e.g. This is a car"
+        autocomplete="off"
+        autofocus
+      />
+      <button id="mic-btn" class="icon-btn" title="Speak English" aria-label="Speak English">🎤</button>
+      <button id="translate-btn">Translate</button>
+    </div>
+
+    <p id="mic-status" class="status" hidden>Listening… click 🎤 again to stop</p>
+    <p id="error-msg" class="status error" hidden></p>
+    <p id="voice-note" class="status" hidden></p>
+
+    <section id="result" class="result" hidden>
+      <p id="english-text" class="english"></p>
+      <div class="french-row">
+        <p id="translated-text" class="translated"></p>
+        <button id="replay-btn" class="icon-btn" title="Hear it again" aria-label="Hear it again">🔊</button>
+      </div>
+      <div id="gloss" class="gloss" hidden></div>
+    </section>
+
+    <section class="history">
+      <div class="history-head">
+        <h2>History</h2>
+        <button id="clear-history" class="icon-btn">Clear</button>
+      </div>
+      <ul id="history-list"></ul>
+      <p id="history-empty" class="status">Nothing yet — translate your first phrase.</p>
+    </section>
+  </main>
+
+  <script src="translate.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
